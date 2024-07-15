@@ -10,4 +10,5 @@ plugins:
     - "@semantic-release/git"
       - assets:
             - CHANGELOG.md
-            - .github/* 
+            - .github/*
+            - best403unlocker*
