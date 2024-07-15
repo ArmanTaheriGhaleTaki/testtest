@@ -1,3 +1,51 @@
+# 1.0.0 (2024-07-15)
+
+
+* Feat/portability ([#26](https://github.com/ArmanTaheriGhaleTaki/testtest/issues/26)) ([7426521](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/7426521fdd959bfab2183e9ae5d3e696a426e749))
+
+
+### Bug Fixes
+
+*  delete extra option ([5833c66](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/5833c66e7aa999ce75e944507a55193a30849424))
+* Add trap to restore resolv.conf.backup  on SIGINT ([#32](https://github.com/ArmanTaheriGhaleTaki/testtest/issues/32)) ([953dcf3](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/953dcf3b0d1011bc73daa92d19cf5b3479bd709a))
+* typo ([00fdc9a](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/00fdc9a2e41b63f0a0037163ef7f8b212dd55b2b))
+* Update .releaserc.yml ([e435212](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/e435212204098ba5592ac2e77b9aee988e39721e))
+* Update upload-dockerhub.yml ([786e9bf](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/786e9bf952ae7a319f8c7619e4452a77dfeb3ad7))
+* Update upload-dockerhub.yml ([b99f3f3](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/b99f3f3d56fa5d80b13474a01dfaabf0eec490f5))
+
+
+### Features
+
+*  .releaserc.yml ([05f769e](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/05f769ecb19a5277be1693f9e5dca4f7e9f40a57))
+*  .releaserc.yml ([5aa5510](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/5aa5510c55f92a5fe654c25c1a337c6e7cf41b79))
+* add .releaserc.yml ([2365c72](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/2365c72cf4d9ba20c34f3848b7a976b21ead9bde))
+* Add an option for analizing docker images ([e86287a](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/e86287a8d287e70ab0a0fe56293bd91a57a6023e))
+* add CONTRIBUTING.md ([c8ab6b8](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/c8ab6b833af051fcca711347e6880bcbaa4cb891))
+* Add dns servers as doc ([87dd7e7](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/87dd7e7968a473cb502624d6e5771910e90372da))
+* add install_required_packages function + fix /etc/best403unlocker.conf url ([#28](https://github.com/ArmanTaheriGhaleTaki/testtest/issues/28)) ([5198e9d](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/5198e9d1e97c9e62e1d15c76b1d5f094c9335899))
+* add IP checker ([7cdc555](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/7cdc5556d0d6a901fd16055f3d1051555138bd18))
+* add new pishgaman dns ([#11](https://github.com/ArmanTaheriGhaleTaki/testtest/issues/11)) ([39848ce](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/39848ce3c757b39692e201a40643cd38ba7f6a8e))
+* Add readme ([c4d3fa9](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/c4d3fa9e799dc078f26a5f277513fd0afd0cc528))
+* bemula .releaserc.yml ([be31f31](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/be31f31d2a9a2b4a6e11454cbe9e80bbd49f1a46))
+* delete upload-dockerhub ([0d4eb8d](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/0d4eb8d4e5dbb9ad4231cb6aac93309159131db6))
+* show which URL is being analyzed ([8f48e1a](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/8f48e1a0f03cfa2d71e4e0004b5802cf0bd2f07d))
+
+
+### Performance Improvements
+
+* **TUI:** Add TUI ([b920d5f](https://github.com/ArmanTaheriGhaleTaki/testtest/commit/b920d5f5d42254d16a10d699185ee7b0a35d743b))
+
+
+### BREAKING CHANGES
+
+* script is now uses config file and only runs with root access
+
+* fix(): make Dockerfile compatible with new changes
+
+* chore(): change .env to best403unlocker.conf
+* Add config file to /etc/ and Make the script idempotent .
+* **TUI:** TUI is Added.
+
 ## [3.3.1](https://github.com/403unlocker/best403unlocker/compare/3.3.0...3.3.1) (2024-07-15)
 
 
