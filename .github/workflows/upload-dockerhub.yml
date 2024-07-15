@@ -6,35 +6,49 @@ on:
       - main # Set a branch to deploy when pushed
 
 jobs:
-  deploy:
+  windows-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      # - name: Login to Docker Hub
-      #   uses: docker/login-action@v3
-      #   with:
-      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: actions/checkout@v4
+      - name: Create installer
+        run: |
+              sudo apt update -y && sudo apt install tar && tar -czvf test.tar.gz .github
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: test.tar.gz
+          path: test.tar.gz
 
-      # - name: Build and push
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/best403unlocker:latest
+      - uses: actions/download-artifact@v4
+        with:
+          name: icons
+          path: icons
+
   release:
-      needs: deploy
-      runs-on: ubuntu-latest
-      if: github.event_name == 'push'
-      steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: lts/*
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    needs:
+      - windows-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: test.tar.gz
 
-            - run: cp .github/.releaserc.yml .
-            - run: npm i -g semantic-release @semantic-release/changelog @semantic-release/git
-            - run: semantic-release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: find .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: "configure semantic-release"
+        run: npm install -D semantic-release @semantic-release/github
+
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
