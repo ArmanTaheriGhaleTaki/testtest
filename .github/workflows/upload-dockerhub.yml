@@ -19,11 +19,6 @@ jobs:
           name: test.tar.gz
           path: test.tar.gz
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: icons
-          path: icons
-
   release:
     permissions:
       contents: write
